@@ -1,4 +1,4 @@
-export const API = async (url, data) => {
+export const API = async (url, token, data) => {
     const response = await fetch(url, {
         method: "POST",
         mode: "cors", // no-cors, *cors, same-origin
@@ -7,8 +7,9 @@ export const API = async (url, data) => {
         headers: {
             "Content-Type": "application/json",
             // 'Content-Type': 'application/x-www-form-urlencoded',
-            authorization:
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZWI0Mjk5MC1lMzllLTExZWItOGJlMC02MzYwZDIwNjA1NGYiLCJpYXQiOjE2MjYxNTU3OTR9.3Q0S43YRWeJg4lZgnsavOysIP4IH58v92amQg2nI4XQ",
+            // authorization:
+            //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZWI0Mjk5MC1lMzllLTExZWItOGJlMC02MzYwZDIwNjA1NGYiLCJpYXQiOjE2MjYxNTU3OTR9.3Q0S43YRWeJg4lZgnsavOysIP4IH58v92amQg2nI4XQ",
+            Authorization: token,
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url

@@ -8,12 +8,14 @@ import {
 import Home from "./component/home/Home";
 import DauLa from "./component/daula/DauLa";
 import DauLaID from "./component/daula/DauLaId";
+import ToolGunny2017 from "./component/toolGunny2017/index";
 function App() {
     return (
         <div className="App">
             <Router basename="/">
                 <div>
                     <a href="/dau-la-dai-luc">Đấu la đại lục</a>
+                    <a href="/tool-gunny2017">Tool Gunny 2017</a>
                 </div>
                 <div>
                     <Switch>
@@ -23,7 +25,13 @@ function App() {
                             path="/dau-la-dai-luc-id"
                             component={DauLaID}
                         />
+                        <Route
+                            exact
+                            path="/tool-gunny2017"
+                            component={ToolGunny2017}
+                        />
                         <Route exact path="/" component={Home} />
+
                         <Redirect to="/" />
                     </Switch>
                 </div>
